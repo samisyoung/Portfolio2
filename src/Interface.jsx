@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"; //need to import
+import { motion } from "motion/react";
 
 const Section = (props) => {
     const { children } = props;
@@ -13,25 +13,6 @@ export const Interface = () => {
             <AboutSection />
             <Section><h1>Contact</h1></Section>
         </div>
-    );
-}
-
-const AboutSection = () => {
-    return (
-        <Section>
-            <h1 className="text-6xl font-extrabold leading-snug">
-                About
-                <br />
-                <span className="bg-white px-1 italic">This is the about section</span>
-            </h1>
-            <p className="text-lg text-gray-600 mt-4">This is the about section.
-                <br />
-                It contains information about the project, the team, and the goals.
-            </p>
-            <button className={'bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16'}>
-                Contact Me
-            </button>
-        </Section>
     );
 }
 
@@ -72,9 +53,23 @@ const languages = [
     },
 ];
 
-const ProjectsSection = () => {
+const AboutSection = () => {
     return (
         <Section>
+            <h1 className="text-6xl font-extrabold leading-snug">
+                About
+                <br />
+                <span className="bg-white px-1 italic">This is the about section</span>
+            </h1>
+            <p className="text-lg text-gray-600 mt-4">This is the about section.
+                <br />
+                It contains information about the project, the team, and the goals.
+            </p>
+            <button className={'bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16'}>
+                Contact Me
+            </button>
+            <br />
+            <br />
             <motion.div initial="hidden" whileInView="visible">
                 <h2 className="text-5xl font-bold">Skills</h2>
                 <div className=" mt-8 space-y-4">
@@ -155,6 +150,16 @@ const ProjectsSection = () => {
                     </div>
                 </div>
             </motion.div>
+        </Section>
+    );
+}
+
+
+
+const ProjectsSection = () => {
+    return (
+        <Section>
+            
         </Section>
     );
 }
